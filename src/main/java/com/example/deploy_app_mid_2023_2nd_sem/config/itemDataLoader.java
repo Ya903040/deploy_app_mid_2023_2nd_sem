@@ -28,8 +28,8 @@ public class itemDataLoader implements CommandLineRunner {
 
     private void loadSeedData() {
         if (todoItemRepository.count() == 0) {
-            TodoItem todoItem1 = new TodoItem("get the milk");
-            TodoItem todoItem2 = new TodoItem("rake the leaves");
+            TodoItem todoItem1 = new TodoItem("to do mid");
+            TodoItem todoItem2 = new TodoItem("do not forgot about workout");
 
             todoItemRepository.save(todoItem1);
             todoItemRepository.save(todoItem2); 
