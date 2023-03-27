@@ -11,7 +11,8 @@
 </head>
 <body style="background: #d7b78d">
 <div class="container">
-    <h1 class="text-center">Todo List</h1>
+
+    <h1 class="text-center" ><img th:src="@{/images/logo.png}" src="../static/images/Logo.png" alt="logo" class="App-logo"> Todo List</h1>
     <hr/>
     <p th:text="|Happy ${today}|" style="text-align: center">Today</p>
     <table class="table table-bordered ">
@@ -42,9 +43,47 @@
         </tbody>
     </table>
 
-    <p><a class="btn btn-outline-success" href="/create-todo">Add a Todo!</a></p>
+    <div class="button_opposite_top">
+        <p><a  class="btn btn-outline-success" href="/create-todo">Add a Todo!</a></p>
+        <p><a class="btn btn-outline-danger" href="/logout">Add a Todo!</a></p>
+
+
+    </div>
 </div>
 
 <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
 </body>
+<style>
+    .App-logo {
+        height: 5rem;
+        pointer-events: none;
+        animation: App-logo-spin infinite 20s linear;
+
+
+    }
+    @keyframes App-logo-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+
+    .button_opposite_top {
+
+        width: 100%;
+        height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        display: grid;
+
+
+    }
+
+    .button_opposite_top a {
+
+    }
+
+</style>
 </html>
