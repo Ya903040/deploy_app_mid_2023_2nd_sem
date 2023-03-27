@@ -5,15 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Document</title>
 </head>
 <body style="background: #d7b78d">
 <div class="container">
 
-    <h1 class="text-center" ><img th:src="@{/images/logo.png}" src="../static/images/Logo.png" alt="logo" class="App-logo"> Todo List</h1>
+    <h1 class="text-center"><img th:src="@{/images/logo.png}" src="../static/images/Logo.png" alt="logo"
+                                 class="App-logo"> Todo List</h1>
     <hr/>
+
     <p th:text="|Happy ${today}|" style="text-align: center">Today</p>
     <table class="table table-bordered ">
         <thead>
@@ -44,12 +47,14 @@
     </table>
 
     <div class="button_opposite_top">
-        <p><a  class="btn btn-outline-success" href="/create-todo">Add a Todo!</a></p>
+        <p><a class="btn btn-outline-success" href="/create-todo">Add a Todo!</a></p>
         <p><a class="btn btn-outline-danger" href="/logout">Add a Todo!</a></p>
-
-
     </div>
+
+    <p style="padding: 5rem; font-size: 1.5rem">This is a simple web application for recording things that you don't
+        want to forget. the date of the last change and the addition are indicated here.</p>
 </div>
+
 
 <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
 </body>
@@ -61,6 +66,7 @@
 
 
     }
+
     @keyframes App-logo-spin {
         from {
             transform: rotate(0deg);
@@ -81,9 +87,6 @@
 
     }
 
-    .button_opposite_top a {
-
-    }
 
 </style>
 </html>
