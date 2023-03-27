@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.time.Instant;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 
 @Controller
@@ -42,6 +43,8 @@ public class itemController {
 
     private final itemRepository todoItemRepository;
 
+
+
     @GetMapping("/")
     public ModelAndView index() {
         logger.info("request to GET index");
@@ -58,8 +61,8 @@ public class itemController {
         }
 
 
-        todoItem.setCreatedDate(Instant.now());
-        todoItem.setModifiedDate(Instant.now());
+        todoItem.setCreatedDate(Instant.now().atZone(ZoneId.of("Asia/Almaty")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
+        todoItem.setModifiedDate(Instant.now().atZone(ZoneId.of("Asia/Almaty")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
         todoItemRepository.save(todoItem);
         return "redirect:/";
     }
@@ -71,7 +74,7 @@ public class itemController {
             return "update-todo-item";
         }
 
-        todoItem.setModifiedDate(Instant.now());
+        todoItem.setModifiedDate(Instant.now().atZone(ZoneId.of("Asia/Almaty")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
         todoItemRepository.save(todoItem);
         return "redirect:/";
     }

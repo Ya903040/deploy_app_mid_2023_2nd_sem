@@ -8,6 +8,8 @@ import lombok.Setter;
 
 
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Table(name = "todo_item")
@@ -30,19 +32,19 @@ public class TodoItem {
 
     @Getter
     @Setter
-    private Instant createdDate;
+    private String createdDate;
 
     @Getter
     @Setter
-    private Instant modifiedDate;
+    private String modifiedDate;
 
     public TodoItem() {}
 
     public TodoItem(String description) {
         this.description = description;
         this.complete = false;
-        this.createdDate = Instant.now();
-        this.modifiedDate = Instant.now();
+        this.createdDate = Instant.now().atZone(ZoneId.of("Asia/Almaty")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+        this.modifiedDate = Instant.now().atZone(ZoneId.of("Asia/Almaty")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
     
     @Override
